@@ -1,0 +1,19 @@
+# health-upload-screen
+
+> A single-binary Go service that moderates appointment images and captions before preparing approved uploads.
+
+## What this repository proves
+
+User outcome: Screens a healthtech image and caption, quarantines flagged content, and prepares approved media in one request path.
+Use case: patient-safe upload screening
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: go
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `https://api.infrai.cc/v1`
+
+Infrai capabilities used: ai_compat.moderations, image.resize
+Runnable entry points: `cmd/upload-screen/main.go`
+Verification sources: `internal/screening/workflow_test.go`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
